@@ -1,0 +1,63 @@
+<div class="container-md mt-4 mb-3">
+
+<%= link_to "←予定一覧へ戻る", :schedules , class: "return-btn" %>
+
+<div class="mt-4">
+  <h3>予定の編集</h3>
+</div>
+
+<%= form_with model: @schedule do |f| %>
+  <div class="card mt-4 mx-4">
+    <div class="card-body p-5">
+      <div class="form-group mb-4">
+        <label for="schedule_title" class="esse">タイトル</label>
+        <%= f.text_field :title, placeholder: "タイトル", class: "form-control" %>
+        <% @schedule.errors.where(:title).each do |error| %>
+          <p class="error-text"><%= error.full_message %></p>
+        <% end %>
+      </div>
+
+      <div class="row">
+      <div class="form-group calender-form mb-4 col-lg-6">
+        <label for="schedule_start_date" class="esse">開始日</label>
+        <%= f.text_field :start_date, placeholder: "---- / -- / --", class: "form-control calender" %>
+        <% @schedule.errors.where(:start_date).each do |error| %>
+          <p class="error-text"><%= error.full_message %></p>
+        <% end %>
+      </div>
+
+      <div class="form-group calender-form mb-4 col-lg-6">
+        <label for="schedule_end_date" class="esse">終了日</label>
+        <%= f.text_field :end_date, placeholder: "---- / -- / --", class: "form-control calender" %>
+        <% @schedule.errors.where(:end_date).each do |error| %>
+          <p class="error-text"><%= error.full_message %></p> 
+        <% end %>
+      </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <%= f.check_box :all_day%>
+        <label for="schedule_all_day">←終日の場合はチェックを入れてください</label>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="schedule_memo">スケジュールメモ</label>
+        <%= f.text_area :memo, placeholder: "メモを入力", class: "form-control", rows: 5 %>
+        <% @schedule.errors.where(:memo).each do |error| %>
+          <p class="error-text"><%= error.full_message %></p>
+        <% end %>
+      </div>
+
+        <%= f.submit "編集を完了する", class: "form-control btn-info btn-block" %>
+
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <p class="alert"><%= flash[:alert] %></p>
+<% end %>
+
+<%= javascript_pack_tag 'main' %>
+
+</div>
