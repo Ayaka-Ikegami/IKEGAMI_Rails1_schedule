@@ -1,0 +1,39 @@
+.dtp-header {
+  display: none;
+}
+
+.dtp-date {
+  visibility: hidden !important;
+}
+
+.dtp-content {
+  height: 350px;
+  width: 300px;
+}
+
+.dtp-date-view {
+  height: 85%;
+  width: 100%;
+  position: relative;
+}
+
+.dtp-picker {
+  position: absolute;
+  height: 300px;
+  top: 5px;
+  left: 25px;
+}
+
+.dtp-select-month-after {
+  visibility: visible;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.dtp-select-month-before {
+  visibility: visible;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}

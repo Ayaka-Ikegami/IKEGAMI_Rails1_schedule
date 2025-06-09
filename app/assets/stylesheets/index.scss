@@ -1,0 +1,47 @@
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-button {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(255, 71, 71);
+  border-radius: 3px;
+  transition: .1s ease-out;
+}
+
+.add-button:hover {
+  background-color: rgb(255, 71, 71);
+}
+
+.add-button:active {
+  box-shadow: 0 0 6px rgb(255, 123, 119);
+  transition: .07s
+}
+
+.add-link {
+  font-size: 15px;
+  color: rgb(255, 71, 71);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.add-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 15px;
+  pointer-events: auto;
+  content: "";
+}
+
+.add-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
